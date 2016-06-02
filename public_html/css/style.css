@@ -3,10 +3,12 @@
     Author     : jeremie
 */
 
-.articleList {
+.articleLink {
     text-align: left;
-    font-size: 12px;
+    font-size: 15px;
     color: #eb9316;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 .articleContent {
@@ -27,6 +29,23 @@
 
 .rssFeedContent {
     text-align: center;
-    padding-left: 10%;
-    padding-right: 10%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#articleSummaryDivision {
+    background-color: #eaeaea;
+    padding: 10px 10px 10px 10px;
+    margin-top: 20px;
+    border: 1px #cacaca solid;
+    border-radius: 10px;
+}
+
+#header {
+    margin: 20px 0px 20px 0px;
+}
+
+#logo {
+    text-align: center;
+    padding-top: 20px;
 }

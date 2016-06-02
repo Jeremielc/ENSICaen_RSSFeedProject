@@ -27,8 +27,9 @@
                 <div id="content" class="col-md-8" ng-controller="rssFeed">
                     <div ng-repeat="feed in feeds.entries">
                         <p ng-cloak id="{{feed.title}}" class="articleTitle"><strong>{{feed.title.toUpperCase()}}</strong></p>
-                        <p  ng-bind-html="feed.content" class="articleContent"></p>
+                        <p  ng-bind-html="feed.contentSnippet" class="articleContent"></p>
                         <p class="credits">
+                            <a href="#" title="Voir plus" data-toggle="{{feed.content}}" data-placement="left" class="btn btn-primary pull-left">Voir plus</a>
                             <span>{{feed.author}}</span>
                             <span>{{feed.publishedDate}}</span>
                         </p>

@@ -14,16 +14,16 @@
             <div class="row">
                 <div class="col-md-4" ng-controller="rssFeed" style="text-align: justify">
                     <div ng-repeat="feed in feeds.entries">
-                        <p class="articleList">{{feed.title}}</p>
+                        <a href="#{{feed.title}}" class="articleList">{{feed.title}} </a>
                     </div>
                 </div>
-                
+
                 <br>
-                
+
                 <div class="col-md-8" ng-controller="rssFeed">
                     <div ng-repeat="feed in feeds.entries">
-                        <p class="articleTitle">{{feed.title}}</p>
-                        <p ng-bind-html="feed.content" class="articleContent"></p>
+                        <p ng-cloak id="{{feed.title}}" class="articleTitle">{{feed.title}}</p>
+                        <p  ng-bind-html="feed.contentSnippet" class="articleContent"></p>
                         <p class="credits">
                             <span>{{feed.author}}</span>
                             <span>{{feed.publishedDate}}</span>
@@ -39,7 +39,6 @@
                 </div>
             </div>
         </div>
-
         <script type="text/javascript" src="../javascript/angular.js"></script>
         <script type="text/javascript" src="../javascript/main.js"></script>
         <script type="text/javascript" src="../javascript/angular-sanitize.min.js"></script>

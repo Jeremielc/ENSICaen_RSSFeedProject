@@ -1,0 +1,37 @@
+<!-- DOCTYPE html -->
+<html lang=fr>
+  <head>
+    <title>ENSICaen RSS Feed</title>
+    <link rel="stylesheet" href="../resources/bootstrap-3.3.6-dist/css/bootstrap.min.css" type="text/css">
+  </head>
+  <body ng-app="rssFeedApp">
+    <div class="container">
+        <div class="row">
+            <h1 align="center" class="col-md-12">Flux RSS ENSICaen</h1>
+        </div>
+
+        <div class="row">
+            <!--<div ng-controller="summaryController" class="col-md-4">
+                <p align="left">Liste des articles</p>
+            </div>-->
+            <div ng-controller="rssFeed" class="col-md-8">
+                <p align="justify">Articles</p>
+                <div ng-repeat="feed in feeds.entries">
+                    <p>{{feed.title}}</p>
+                    <p>{{feed.content}}</p>
+                    <p>{{feed.author}}</p>
+                    <p>{{feed.publishedDate}}</p>
+                </div>
+            </div>
+	        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p align="center">Pierrick Hue et J&#233;r&#233;mie Leclerc - ENSICaen - Mai 2016</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../javascript/angular.js"></script>
+    <script type="text/javascript" src="../javascript/main.js"></script>
+  </body>
+</html>

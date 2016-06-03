@@ -2,7 +2,10 @@
 <html lang=fr>
     <head>
         <title>ENSICaen RSS Feed</title>
-        <link rel="stylesheet" href="../resources/bootstrap-3.3.6-dist/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="../resources/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+        <script src="../javascript/jquery.min.js"></script>
+        <script src="../resources/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+
         <link rel="stylesheet" href="../css/style.css">
     </head>
     <body class="container" ng-app="rssFeedApp">
@@ -12,7 +15,7 @@
                     <img src="../resources/images/ensi-cartouche-web2016.png" alt="logo ensicaen 2016"/>
                 </div>
                 <div class="col-md-8">
-                    <h1 align="center">Flux RSS ENSICaen</h1>
+                    <h1 align="center">Flux RSS ENSICAEN</h1>
                 </div>
             </div>
 
@@ -23,13 +26,15 @@
                         <br><br>
                     </div>
                 </div>
-
                 <div id="content" class="col-md-8" ng-controller="rssFeed">
                     <div ng-repeat="feed in feeds.entries">
-                        <p ng-cloak id="{{feed.title}}" class="articleTitle"><strong>{{feed.title.toUpperCase()}}</strong></p>
+                        <p  id="{{feed.title}}" class="articleTitle"><strong>{{feed.title.toUpperCase()}}</strong></p>
                         <p  ng-bind-html="feed.contentSnippet" class="articleContent"></p>
+                        <a ng-init="feed.afficher=false" ng-click="feed.afficher = !feed.afficher " class="btn btn-primary pull-left" role="button">Voir plus</a>
+                        <div ng-show="feed.afficher">
+                            <div class="well" ng-bind-html="feed.content"></div>
+                        </div>
                         <p class="credits">
-                            <a href="#" title="Voir plus" data-toggle="{{feed.content}}" data-placement="left" class="btn btn-primary pull-left">Voir plus</a>
                             <span>{{feed.author}}</span>
                             <span>{{feed.publishedDate}}</span>
                         </p>

@@ -18,9 +18,9 @@
             </div>
 
             <div class="row">
-                <div id="articleSummaryDivision" class="col-md-4" ng-controller="rssFeed" style="text-align: justify">
+                <div id="articleSummaryDivision" class="col-md-4" ng-controller="rssFeed">
                     <div ng-repeat="feed in feeds.entries">
-                        <a href="#{{feed.title}}" class="articleLink">{{feed.title}}</a>
+                        <a href="#{{feed.title}}" class="articleLink">{{feed.title.toUpperCase()}}</a>
                         <br><br>
                     </div>
                 </div>
@@ -29,7 +29,10 @@
                     <div ng-repeat="feed in feeds.entries">
                         <p id="{{feed.title}}" class="articleTitle"><strong>{{feed.title.toUpperCase()}}</strong></p>
                         <p ng-show="!feed.display" ng-bind-html="feed.contentSnippet" class="articleContent"></p>
-                        <a ng-init="feed.display = false" ng-click="feed.display = !feed.display" class="btn btn-primary pull-left" role="button">Voir plus</a>
+                        <a ng-init="feed.display = false" ng-click="feed.display = !feed.display" class="btn btn-primary pull-left buttonShow">
+                            {{feed.display === false ? "Voir plus" : "Voir moins"}}
+                        </a>
+                        <br>
                         <div ng-show="feed.display" class="well" ng-bind-html="feed.content"></div>
                         <p class="credits">
                             <span>{{feed.author}}</span>

@@ -3,9 +3,6 @@
     <head>
         <title>ENSICaen RSS Feed</title>
         <link rel="stylesheet" href="../resources/bootstrap-3.3.6-dist/css/bootstrap.min.css">
-        <script src="../javascript/jquery.min.js"></script>
-        <script src="../resources/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
-
         <link rel="stylesheet" href="../css/style.css">
 
 
@@ -33,6 +30,7 @@
 
 
     </head>
+    
     <body class="container" ng-app="rssFeedApp">
         <div>
             <div id="header" class="row">
@@ -45,9 +43,9 @@
             </div>
 
             <div class="row">
-                <div id="articleSummaryDivision" class="col-md-4" ng-controller="rssFeed" style="text-align: justify">
+                <div id="articleSummaryDivision" class="col-md-4" ng-controller="rssFeed">
                     <div ng-repeat="feed in feeds.entries">
-                        <a href="#{{feed.title}}" class="articleLink">{{feed.title}}</a>
+                        <a href="#{{feed.title}}" class="articleLink">{{feed.title.toUpperCase()}}</a>
                         <br><br>
                     </div>
 
@@ -76,6 +74,7 @@
                             <br>
                             <div class="well" ng-bind-html="feed.content"></div>
                         </div>
+
                         <p class="credits">
                             <span>{{feed.author}}</span>
                             <span>{{feed.publishedDate}}</span>
@@ -84,16 +83,18 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+
+            <div id="footer" class="row">
                 <div class="col-md-12">
-                    <p align="center">Pierrick Hue et J&#233;r&#233;mie Leclerc - ENSICaen - Mai 2016</p>
+                    <p>Pierrick Hue et J&#233;r&#233;mie Leclerc - ENSICAEN - Mai 2016</p>
                 </div>
             </div>
         </div>
-        
+
         <script type="text/javascript" src="../javascript/angular.js"></script>
         <script type="text/javascript" src="../javascript/main.js"></script>
         <script type="text/javascript" src="../javascript/angular-sanitize.min.js"></script>
-
+        <script src="../javascript/jquery.min.js"></script>
+        <script src="../resources/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
     </body>
 </html>

@@ -26,7 +26,11 @@ function contains(word_search, word_find) {
     if (word_search.indexOf(word_find) != -1)
         return true;
 }
-$("#searchButton").click(function () {
+$("#searchText").keyup(function (event) {
+        if(event.which == 13){
+            $("#searchButton").click();
+        }
+        event.preventDefault();
     var searchText = $("#searchText").val().toLowerCase();
     $(".article").each(function () {
         if (!contains($(this).text().toLowerCase(), searchText))

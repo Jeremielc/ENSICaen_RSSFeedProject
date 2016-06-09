@@ -73,3 +73,24 @@
     text-align: center;
     padding-top: 20px;
 }
+
+/*----------- Search Bar ---------------*/
+
+.btn-search {
+    background-color: #666;
+    color: #fff;
+    border-radius:0;
+    border-color:#666;
+}
+
+.input-search {
+    border-radius:0;
+    background-color: #eee;
+    box-shadow: none;
+    border: none;
+    border-right: 1px solid #eee;
+}
+
+.input-search:focus {
+    box-shadow: none;
+}

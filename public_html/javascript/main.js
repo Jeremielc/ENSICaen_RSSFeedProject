@@ -8,6 +8,7 @@
  * Controller of the testApp
  */
 
+/*------------------ Load RSS Feed -----------------*/
 var App = angular.module('rssFeedApp', ['ngSanitize']);
 App.controller('rssFeed', function ($scope, $http) {
     this.$http = $http;
@@ -18,4 +19,33 @@ App.controller('rssFeed', function ($scope, $http) {
         console.log(res.data.responseData.feed);
         $scope.feeds = res.data.responseData.feed;
     });
+});
+
+/*----------- Function Search -------------------*/
+function contains(word_search, word_find) {
+    if (word_search.indexOf(word_find) != -1)
+        return true;
+}
+$("#searchButton").click(function () {
+    var searchText = $("#searchText").val().toLowerCase();
+    $(".article").each(function () {
+        if (!contains($(this).text().toLowerCase(), searchText))
+            $(this).hide();
+        else
+            $(this).show();
+    });
+});
+
+/*------------- Word Cloud --------------------*/
+$(document).ready(function () {
+    if (!$('#myCanvas').tagcanvas({
+            textColour: '#265a88',
+            outlineColour: '#990033',
+            reverse: true,
+            depth: 0.8,
+            maxSpeed: 0.05
+        }, 'tags')) {
+        // something went wrong, hide the canvas container
+        $('#myCanvasContainer').hide();
+    }
 });

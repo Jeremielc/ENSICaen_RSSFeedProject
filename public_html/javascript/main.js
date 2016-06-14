@@ -23,11 +23,11 @@ App.controller('rssFeed', function ($scope, $http) {
 
 /*----------- Function Search -------------------*/
 function contains(word_search, word_find) {
-    if (word_search.indexOf(word_find) != -1)
+    if (word_search.indexOf(word_find) !== -1)
         return true;
 }
 $("#searchText").keyup(function (event) {
-        if(event.which == 13){
+        if(event.which === 13){
             $("#searchButton").click();
         }
         event.preventDefault();

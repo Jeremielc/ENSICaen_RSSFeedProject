@@ -1,5 +1,5 @@
-<!-- DOCTYPE html -->
-<html lang="fr" xmlns="http://www.w3.org/1999/html">
+<!DOCTYPE html>
+<html lang="fr">
     <head>
         <meta charset="utf-8"/>
         <title>ENSICaen RSS Feed</title>
@@ -19,21 +19,9 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4">
-                </div>
-                <div class="col-md-7">
-                    <div class="input-group">
-                        <input type="text" id="searchText"class="form-control input-search">
-                            <span class="input-group-btn">
-                                <button id="searchButton" class="btn btn-search" type="button"><i class="glyphicon glyphicon-search"></i></button>
-                            </span>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
                 <div id="articleSummaryDivision" class="col-md-4" ng-controller="rssFeed">
                     <div ng-repeat="feed in feeds.entries">
-                        <a href="#{{feed.title}}" class="articleLink">{{feed.title.toUpperCase()}}</a>
+                        <a href="#{{feed.title}}" class="articleLink">{{feed.title}}</a>
                         <br/>
                         <br/>
                     </div>
@@ -41,20 +29,33 @@
                     <!-- Word cloud -->
                     <div class="row">
                         <div id="myCanvasContainer" >
-                            <canvas width="400" height="500" id="myCanvas"></canvas>
+                            <canvas width="300" height="400" id="myCanvas" style="text-align: center; padding-left: 10px; padding-right: 10px;"></canvas>
                         </div>
                         <div id="tags">
                             <ul>
-                                <li <!--ng-repeat="feed in feeds.entries"-->>
-                                    <a href="http://www.google.com">Google</a>
-                                    <!--<a href="#{{feed.title}}">{{feed.title}}</a>-->
-                                </li>
+                                <li><a href="#13ème édition des Trophées des Ingénieurs du futur">13ème édition des Trophées des Ingénieurs du futur</a></li>
+                                <li><a href="#SolsTICE d’été n°2, le 21 juin">SolsTICE d’été n°2, le 21 juin</a></li>
+                                <li><a href="#Facturation électronique – Nouvelle session de formation continue le 31 mai">Facturation électronique – Nouvelle session de formation continue le 31 mai</a></li>
+                                <li><a href="#Elève en électronique, Florian fait la une d’un journal universitaire en Argentine">Elève en électronique, Florian fait la une d’un journal universitaire en Argentine</a></li>
+                                <li><a href="#Résultats du jury d’admission sur titre en 1ère année 2016">Résultats du jury d’admission sur titre en 1ère année 2016</a></li>
+                                <li><a href="#Ma thèse en 180 secondes : finale nationale le 31 mai">Ma thèse en 180 secondes : finale nationale le 31 mai</a></li>
+                                <li><a href="#Joël Alexandre est élu président de l’université de Rouen Normandie">Joël Alexandre est élu président de l’université de Rouen Normandie</a></li>
+                                <li><a href="#WNE World Nuclear Exhibition du 28 au 30 juin">WNE World Nuclear Exhibition du 28 au 30 juin</a></li>
+                                <li><a href="#Solucom&share sur l’entreprise digitale le 1er juin">Solucom&share sur l’entreprise digitale le 1er juin</a></li>
+                                <li><a href="#Conférence “Femmes et sciences : quelle évolution ?” le 30 mai">Conférence “Femmes et sciences : quelle évolution ?” le 30 mai</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
 
                 <div id="content" class="col-md-8" ng-controller="rssFeed">
+                    <div class="input-group" style="padding-bottom: 25px;">
+                        <input type="text" id="searchText"class="form-control input-search">
+                            <span class="input-group-btn">
+                                <button id="searchButton" class="btn btn-search" type="button"><i class="glyphicon glyphicon-search"></i></button>
+                            </span>
+                    </div>
+                    
                     <div class="article" ng-repeat="feed in feeds.entries">
                         <p id="{{feed.title}}" class="articleTitle"><strong>{{feed.title.toUpperCase()}}</strong></p>
                         <p ng-show="!feed.display" ng-bind-html="feed.contentSnippet" class="articleContent"></p>
@@ -77,7 +78,7 @@
 
             <div id="footer" class="row">
                 <div class="col-md-12">
-                    <p>Pierrick Hue et J&#233;r&#233;mie Leclerc - ENSICAEN - Mai 2016</p>
+                    <p>Pierrick Hue et J&#233;r&#233;mie Leclerc - ENSICAEN - Juin 2016</p>
                 </div>
             </div>
         </div>

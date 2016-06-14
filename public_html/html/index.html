@@ -33,16 +33,7 @@
                         </div>
                         <div id="tags">
                             <ul>
-                                <li><a href="#13ème édition des Trophées des Ingénieurs du futur">13ème édition des Trophées des Ingénieurs du futur</a></li>
-                                <li><a href="#SolsTICE d’été n°2, le 21 juin">SolsTICE d’été n°2, le 21 juin</a></li>
-                                <li><a href="#Facturation électronique – Nouvelle session de formation continue le 31 mai">Facturation électronique – Nouvelle session de formation continue le 31 mai</a></li>
-                                <li><a href="#Elève en électronique, Florian fait la une d’un journal universitaire en Argentine">Elève en électronique, Florian fait la une d’un journal universitaire en Argentine</a></li>
-                                <li><a href="#Résultats du jury d’admission sur titre en 1ère année 2016">Résultats du jury d’admission sur titre en 1ère année 2016</a></li>
-                                <li><a href="#Ma thèse en 180 secondes : finale nationale le 31 mai">Ma thèse en 180 secondes : finale nationale le 31 mai</a></li>
-                                <li><a href="#Joël Alexandre est élu président de l’université de Rouen Normandie">Joël Alexandre est élu président de l’université de Rouen Normandie</a></li>
-                                <li><a href="#WNE World Nuclear Exhibition du 28 au 30 juin">WNE World Nuclear Exhibition du 28 au 30 juin</a></li>
-                                <li><a href="#Solucom&share sur l’entreprise digitale le 1er juin">Solucom&share sur l’entreprise digitale le 1er juin</a></li>
-                                <li><a href="#Conférence “Femmes et sciences : quelle évolution ?” le 30 mai">Conférence “Femmes et sciences : quelle évolution ?” le 30 mai</a></li>
+                                <li ng-repeat="feed in feeds.entries"><a href="#{{feed.title}}">{{feed.title}}</a></li>
                             </ul>
                         </div>
                     </div>

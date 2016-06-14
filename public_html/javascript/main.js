@@ -41,7 +41,7 @@ $("#searchText").keyup(function (event) {
 });
 
 /*------------- Word Cloud --------------------*/
-$(document).ready(function () {
+function refreshCanvas () {
     if (!$('#myCanvas').tagcanvas({
             textColour: '#265a88',
             outlineColour: '#990033',
@@ -52,4 +52,8 @@ $(document).ready(function () {
         // something went wrong, hide the canvas container
         $('#myCanvasContainer').hide();
     }
-});
+}
+
+setTimeout( function() { 
+    refreshCanvas();
+}, 1000);
